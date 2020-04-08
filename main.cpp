@@ -1,3 +1,11 @@
+/*
+First, we substract P from all numbers, thus the problem becomes: find the number of subsegments such that the sum of the numbers
+in each is positive.
+After that observation, the problem becomes easy, we just need to initilize a prefix sum array, then compress its values.
+for each i in the prefix array, we need to find the number of indexes j<i, such that pfx[i]>=pfx[j], and that could be done by 
+iterating over the prefix array and using a BIT (or a segment tree).
+Note: I didn't use a set and a map to compress because that gave me MLE and TLE, so I had to compress the prefix array this way.
+*/
 #include <bits/stdc++.h>
 using namespace std;
 const int N=2e6+6;
